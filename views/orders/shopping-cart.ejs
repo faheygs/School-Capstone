@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+<% if (products && totalPrice > 0.00) { %>
+    <h1 class="display-4">Shopping Cart</h1>
+    <div class="row">
+        <div class="col-sm-10 m-auto pt-4">
+            <ul class="list-group">
+                <% products.forEach(function(product) { %>
+                    <li class="list-group-item item_each mb-3" style="background: #DDDDDD;">
+                        <img class="cart_img float-left" src="<%= product.item.image %>"/>
+                        <div class="col-md-8 float-left">
+                            <h3 class="d-inline"><%= product.item.name %></h3>
+                            <p class="d-inline float-right h5">$<%= product.local_price.toFixed(2) %></p>
+                        </div>
+                        <div class="col-md-2 float-right">
+                            <a href="/orders/reduce/<%= product.item._id %>"><i class="fas fa-minus"></i></a>                            
+                            <span class="badge"><%= product.qty %></span>
+                            <a class="btn btn-danger btn-sm"href="/orders/remove/<%= product.item._id %>">DELETE</a>
+                        </div>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <strong>Total: $<%= totalPrice.toFixed(2) %></strong>
+    </div>
+    <hr>
+    <div class="row">
+        <a href="checkout" type="button" class="btn btn-success">Checkout</a>
+    </div>
+<% } else { %>
+    <h1 class="display-4">No Items in Cart</h1>
+<% } %>
+
+<% include ../partials/footer %>

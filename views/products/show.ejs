@@ -1,0 +1,68 @@
+<% include ../partials/header %>
+
+<div class="row pt-5 pb-5">
+    <div class="col-md-6">
+        <div>
+            <img class="figure-img rounded img-fluid" src="<%= product.image %>">
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card border-dark">
+          <div class="card-header"><%= product.name.charAt(0).toUpperCase() + product.name.slice(1); %></div>
+          <div class="card-body text-dark">
+            <h5 class="card-title"><%= product.category.charAt(0).toUpperCase() + product.category.slice(1); %>'s</h5>
+            <p class="card-text align-middle"><%= product.description %></p>
+            <div class="card-text text-dark">
+                <form class="to_cart_form" action="/orders/add-to-cart/<%= product._id %>" method="GET">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 col-lg-4">
+                                <b class="h4 single_price">Price: $<%= product.price.toFixed(2) %></b>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <div class="input-group qty_field">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text text-light bg-dark">QTY</span>
+                                    </div>
+                                    <input type="number" class="form-control" name="qty" min="1" value="1" id="qty">
+                                </div>
+                            </div>
+                            <div class="col-md-12 col-lg-4">
+                                <button type="submit" class="btn btn-md btn-info cart_btn"><i class="fas fa-plus"></i> Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<h1 class="text-center">Related Items</h1>
+
+    <div class="row text-center">
+        
+        <% allProducts.forEach(function(allproducts) { %>
+            <% if(allproducts.id !== product.id) { %>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="img-thumbnail">
+                        <figure class="figure">
+                            <img class="figure-img img-fluid rounded" src="<%= allproducts.image %>">
+                            <figcaption  class="figure-caption">
+                                <h4><%= allproducts.name %></h4>
+                                <h4>$<%= allproducts.price.toFixed(2) %></h4>
+                            </figcaption >
+                            <p>
+                                <a href="/products/<%= allproducts._id %>" class="btn btn-md btn-primary">View Product</a>
+                            </p>
+                        </figure>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>
+        
+    </div>
+
+<% include ../partials/footer %>

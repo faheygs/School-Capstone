@@ -1,0 +1,70 @@
+.navbar-brand {
+    font-family: 'Meddon', cursive;
+}
+
+.navbar a {
+    font-size: 17px;
+}
+
+.navbar li:hover {
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+    transition: border 0.3s ease;
+}
+
+.userNav a:hover {
+    border-bottom: 2px solid black;
+    margin-bottom: -2px;
+    transition: border 0.3s ease;
+}
+
+.underlineActive {
+    border-bottom: 2px solid white;
+    margin-bottom: -2px;
+}
+
+.img-thumbnail img {
+    width: 100%;
+}
+
+.img-thumbnail {
+    padding: 0;
+    margin-top: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.btn-group button {
+    width: 80px;
+    height: 45px;
+}
+
+.dropdown-item:hover {
+    background: #d9d9d9;
+}
+
+textarea {
+    height: 200px;
+}
+
+.userNav {
+    background: #cccccc;
+}
+
+.cart_img {
+    width: 75px;
+    height: 75px;
+}
+
+.item_each {
+    width: 100%;
+}
+
+.description_cart {
+    font-size: 15px;
+}

@@ -1,0 +1,54 @@
+@media only screen and (max-width: 1199px) and (min-width: 992px) {
+    .single_price {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .qty_field { 
+        width: 50%;
+        margin: 2% auto;
+    }
+    
+    .cart_btn {
+        margin-top: 1%;
+    }
+    
+    .to_cart_form {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 321px) {
+    .qty_field { 
+        width: 40%;
+        margin: 2% auto;
+    }
+    
+    .cart_btn {
+        margin-top: 1%;
+        width: 40%;
+        height: 50px;
+    }
+    
+    .to_cart_form {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .qty_field { 
+        width: 60%;
+        margin: 2% auto;
+    }
+    
+    .cart_btn {
+        margin-top: 1%;
+        width: 60%;
+        height: 50px;
+    }
+    
+    .to_cart_form {
+        text-align: center;
+    }
+}

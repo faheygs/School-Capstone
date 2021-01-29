@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+    <form action="/products" method="POST" enctype="multipart/form-data" class="m-auto w-50">
+        <h1 class="display-4 pt-5 pb-3 text-center">Add a New Product</h1>
+        <div class="form-group">
+            <label for="name">Name of Product</label>
+            <input type="text" class="form-control" name="name" id="name" required>
+        </div>
+        <div class="form-group">
+            <label for="image">Image to Upload</label>
+            <input type="file" name="image" id="image" class="form-control" accept="image/*" required>
+        </div>
+        <div class="form-group">
+            <label for="price">Price of Product</label>
+            <input type="number" name="price" id="price" class="form-control" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="category">Select Category of Product</label>
+            <select name="category" id="category" class="form-control" required>
+                <option></option>
+                <option value="font">Font</option>
+                <option value="print">Print</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="description">Description of Product</label>
+            <textarea name="description" id="description" class="form-control" required="required"></textarea>
+        </div>
+        <button type="submit" class="btn btn-dark w-100 mb-2">Add New Product</button>
+        <a href="/products/view">Go Back</a>
+    </form>
+
+<% include ../partials/footer %>

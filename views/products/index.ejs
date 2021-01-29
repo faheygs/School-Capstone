@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+    <div class="row pt-4">
+        <h1 class="h2 w-100 text-center">Filter By:</h1>
+        <div class="w-100 text-center">
+            <form class="w-100 m-auto" action="/products" method="GET">
+                <div class="btn-group text-center" role="group" aria-label="Basic example">
+                    <button type="submit" name="filter" value="all" class="btn btn-secondary <%= path === '/products?filter=all' || path === '/products' ? ' active' : '' %>">All</button>
+                    <button type="submit" name="filter" value="font" class="btn btn-secondary <%= path === '/products?filter=font' ? ' active' : '' %>">Fonts</button>
+                    <button type="submit" name="filter" value="print" class="btn btn-secondary <%= path === '/products?filter=print' ? ' active' : '' %>">Prints</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <hr>
+    
+    <h1 class="display-4">Products</h1>
+    
+    <div class="row text-center">
+        <% product.forEach(function(product) { %>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="img-thumbnail">
+                    <figure class="figure">
+                        <img class="figure-img img-fluid rounded" src="<%= product.image %>">
+                        <figcaption  class="figure-caption">
+                            <h3 class="pt-1 pb-1" style="text-transform: capitalize;"><%= product.name %></h3>
+                        </figcaption >
+                        <a href="/products/<%= product._id %>" class="btn btn-dark">View More</a>
+                    </figure>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<% include ../partials/footer %>
