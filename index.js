@@ -41,7 +41,8 @@ app.use(flash());
 //=====================
 //CONNECTION TO MONGODB
 //=====================
-mongoose.connect("mongodb+srv://admin:admin@shannanigans-cpest.mongodb.net/test?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect("mongodb+srv://admin:admin@cluster0.salfdug.mongodb.net/?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true });
+
 
 
 //====================================================
